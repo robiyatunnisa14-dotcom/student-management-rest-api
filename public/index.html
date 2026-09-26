@@ -187,6 +187,16 @@
             padding: 0 10px;
         }
     }
+
+    #apiResponse {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: monospace;
+    }
 </style>
 ```
 
@@ -204,7 +214,7 @@
 
     <div id="message" class="message"></div>
 
-    <div class="card">
+    <div class="card">       
 
         <h2 id="formTitle">Tambah Siswa</h2>
 
@@ -321,6 +331,12 @@
 
             </table>
 
+            <div class="card">
+        <h2>Response API</h2>
+
+        <pre id="apiResponse">Belum ada response dari API</pre>
+    </div>
+
         </div>
 
     </div>
@@ -331,6 +347,11 @@
 <script>
 
 const API_URL = '/api/siswa';
+
+function showApiResponse(data) {
+    document.getElementById('apiResponse').textContent =
+        JSON.stringify(data, null, 4);
+}
 // ========================================
 // INTEGRASI FRONTEND DENGAN REST API
 // Menggunakan JavaScript Fetch API
@@ -383,6 +404,8 @@ async function getStudents() {
         const response = await fetch(API_URL);
 
         const result = await response.json();
+
+        showApiResponse(result);
 
         if (!response.ok) {
 
