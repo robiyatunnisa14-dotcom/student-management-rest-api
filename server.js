@@ -12,6 +12,11 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// ===============================
+// REST API STUDENT MANAGEMENT
+// ===============================
+
+
 // Test server
 app.get('/', (req, res) => {
     res.send('Student Management System berhasil berjalan!');
