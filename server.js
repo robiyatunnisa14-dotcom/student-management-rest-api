@@ -98,6 +98,8 @@ app.get('/api/siswa/:id', async (req, res) => {
 
 
 // ===============================
+// STUDENT CRUD - CREATE
+// ===============================
 // POST TAMBAH SISWA
 // ===============================
 app.post('/api/siswa', async (req, res) => {
@@ -162,6 +164,8 @@ app.post('/api/siswa', async (req, res) => {
 });
 
 
+// ===============================
+// STUDENT CRUD - UPDATE
 // ===============================
 // PUT EDIT SISWA
 // ===============================
@@ -235,6 +239,8 @@ app.put('/api/siswa/:id', async (req, res) => {
 });
 
 
+// ===============================
+// STUDENT CRUD - DELETE
 // ===============================
 // DELETE SISWA
 // ===============================
